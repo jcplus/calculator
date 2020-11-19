@@ -1,32 +1,36 @@
 <template>
-    <Page>
-        <ActionBar title="Welcome to NativeScript-Vue!"/>
-        <GridLayout columns="*" rows="*">
-            <Label class="message" :text="msg" col="0" row="0"/>
-        </GridLayout>
-    </Page>
+	<Page>
+		<ActionBar title="Calculator App"/>
+		<GridLayout columns="*, *, *" rows="*, *, *">
+			<CalculatorKey class="key" :text="7" row="0" col="0"></CalculatorKey>
+			<CalculatorKey class="key" :text="8" row="0" col="1"></CalculatorKey>
+			<CalculatorKey class="key" :text="9" row="0" col="2"></CalculatorKey>
+		</GridLayout>
+	</Page>
 </template>
 
-<script >
-  export default {
-    data() {
-      return {
-        msg: 'Hello World!'
-      }
-    }
-  }
+<script>
+import CalculatorKey from './CalculatorKey'
+
+export default {
+	components: {
+		'CalculatorKey': CalculatorKey
+	},
+	data() {
+		return {
+			msg: 'Hello World!'
+		}
+	}
+}
 </script>
 
 <style scoped>
-    ActionBar {
-        background-color: #53ba82;
-        color: #ffffff;
-    }
+ActionBar {
+	background-color: #53ba82;
+	color: #ffffff;
+}
 
-    .message {
-        vertical-align: center;
-        text-align: center;
-        font-size: 20;
-        color: #333333;
-    }
+.key {
+	margin: 0;
+}
 </style>
